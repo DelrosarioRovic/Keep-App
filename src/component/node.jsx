@@ -1,12 +1,20 @@
 import React from "react";
+import noteCollection from "../note-collection";
+import CreateNote from "./createNote";
 
-function Content() {
+
+
+function FinishContent() {
     return(
-        <div className="note">
-            <h1>This is the note Title</h1>
-            <p>This is the note content</p>
-        </div>
+        noteCollection.map(note => <CreateNote
+                key={note.key}
+                title={note.title}
+                content={note.content}
+            />
+        )
     );
 }
 
-export default Content;
+
+
+export default FinishContent;
